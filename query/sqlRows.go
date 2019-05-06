@@ -1,4 +1,4 @@
-package selects
+package query
 
 import (
 	// "database/sql"

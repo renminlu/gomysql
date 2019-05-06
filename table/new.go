@@ -3,7 +3,7 @@ package table
 import (
 	// "fmt"
 	// "database/sql"
-	"qqqkkk/sql/selects"
+	"github.com/renminlu/gomysql/query"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
@@ -15,7 +15,7 @@ import (
  */
 func New(db *sqlx.DB, table string) (*TableStruct, error) {
 	ts := TableStruct{}
-	rows, err := selects.GetRows(db, "desc "+table)
+	rows, err := query.GetRows(db, "desc "+table)
 	if err != nil {
 		return &ts, err
 	}
